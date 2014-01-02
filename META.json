@@ -43,15 +43,29 @@
       },
       "runtime" : {
          "requires" : {
+            "File::ShareDir" : "1.00",
+            "IPC::Run3" : "0.046",
             "perl" : "5.008005"
          }
       },
       "test" : {
          "requires" : {
-            "Test::More" : "0.98"
+            "Test::More" : "0.98",
+            "Test::Synopsis::Expectation" : "0.02"
          }
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/pawa-/EBook-EPUB-Check/issues"
+      },
+      "homepage" : "https://github.com/pawa-/EBook-EPUB-Check",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/pawa-/EBook-EPUB-Check",
+         "web" : "https://github.com/pawa-/EBook-EPUB-Check"
+      }
+   },
    "version" : "0.01"
 }
