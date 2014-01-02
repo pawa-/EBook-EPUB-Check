@@ -1,21 +1,56 @@
 # NAME
 
-EBook::EPUB::Check - It's new $module
+EBook::EPUB::Check - Perl wrapper for EpubCheck
 
 # SYNOPSIS
 
-    use EBook::EPUB::Check;
+    use EBook::EPUB::Check; # exports epubcheck()
+
+    my $result = epubcheck('epub/invalid.epub'); # => isa 'EBook::EPUB::Check::Result'
+
+    unless ($result->is_valid)
+    {
+        print $result->report;
+    }
+
+    epubcheck('epub/valid.epub')->is_valid; # => success
+
+
 
 # DESCRIPTION
 
-EBook::EPUB::Check is ...
+EBook::EPUB::Check checks whether your EPUB files are valid.
+
+For more Information about EpubCheck, see [https://github.com/IDPF/epubcheck/wiki](https://github.com/IDPF/epubcheck/wiki).
+
+# PREREQUISITES
+
+Java must be installed and set in your PATH.
+
+# FUNCTIONS
+
+## epubcheck( $epub \[, $jar\] )
+
+Returns an [EBook::EPUB::Check::Result](https://metacpan.org/pod/EBook::EPUB::Check::Result) instance.
 
 # LICENSE
 
-Copyright (C) pawa.
+- of the Module
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself.
+    Copyright (C) pawa.
+
+    This library is free software; you can redistribute it and/or modify
+    it under the same terms as Perl itself.
+
+- of EpubCheck
+
+    New BSD License
+
+# SEE ALSO
+
+[https://github.com/IDPF/epubcheck/wiki](https://github.com/IDPF/epubcheck/wiki)
+
+[EBook::EPUB](https://metacpan.org/pod/EBook::EPUB)
 
 # AUTHOR
 

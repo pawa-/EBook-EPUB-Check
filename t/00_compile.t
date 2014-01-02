@@ -1,9 +1,7 @@
 use strict;
+use warnings;
 use Test::More;
 
-use_ok $_ for qw(
-    EBook::EPUB::Check
-);
+BEGIN { use_ok('EBook::EPUB::Check', qw/epubcheck/); }
 
 done_testing;
-
