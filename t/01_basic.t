@@ -8,8 +8,8 @@ use EBook::EPUB::Check qw/epubcheck/;
 
 plan skip_all => 'Java must be installed and set in your PATH!' unless which('java');
 
-my $exception = exception { epubcheck('epub/valid.epub') };
-plan skip_all => $exception if defined $exception && $exception =~ /java/i;
+my $report = epubcheck('epub/valid.epub')->report;
+plan skip_all => $report if $report =~ /Error occurred during initialization of VM/i;
 
 subtest 'valid epub file' => sub {
     my $result = epubcheck('epub/valid.epub');
