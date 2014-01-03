@@ -1,5 +1,8 @@
 requires 'perl', '5.008001';
 
+requires 'Carp';
+requires 'parent';
+requires 'Exporter';
 requires 'File::ShareDir', '>= 1.00';
 requires 'IPC::Run3',      '>= 0.046';
 

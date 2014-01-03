@@ -44,8 +44,11 @@
       },
       "runtime" : {
          "requires" : {
+            "Carp" : "0",
+            "Exporter" : "0",
             "File::ShareDir" : "1.00",
             "IPC::Run3" : "0.046",
+            "parent" : "0",
             "perl" : "5.008001"
          }
       },
@@ -69,5 +72,5 @@
          "web" : "https://github.com/pawa-/EBook-EPUB-Check"
       }
    },
-   "version" : "0.00_03"
+   "version" : "0.00_02"
 }
