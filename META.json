@@ -30,6 +30,7 @@
          "requires" : {
             "CPAN::Meta" : "0",
             "CPAN::Meta::Prereqs" : "0",
+            "File::Which" : "1.09",
             "Module::Build" : "0.38"
          }
       },
@@ -50,7 +51,6 @@
       },
       "test" : {
          "requires" : {
-            "File::Which" : "1.09",
             "Test::Fatal" : "0",
             "Test::More" : "0.99",
             "Test::Warn" : "0"
@@ -69,5 +69,5 @@
          "web" : "https://github.com/pawa-/EBook-EPUB-Check"
       }
    },
-   "version" : "0.00_02"
+   "version" : "0.00_03"
 }

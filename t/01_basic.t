@@ -1,12 +1,9 @@
 use strict;
 use warnings;
-use File::Which qw/which/;
 use Test::More;
 use Test::Warn;
 use Test::Fatal;
-use EBook::EPUB::Check qw/epubcheck/;
-
-plan skip_all => 'Java must be installed and set in your PATH!' unless which('java');
+use EBook::EPUB::Check;
 
 my $report = epubcheck('epub/valid.epub')->report;
 plan skip_all => $report if $report =~ /Error occurred during initialization of VM/i;
