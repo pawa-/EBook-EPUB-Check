@@ -33,7 +33,7 @@ sub epubcheck
     my $out;
     my @cmd = ('java', '-jar', $jar, $epub);
 
-    IPC::Run3::run3(\@cmd, \undef, \$out, \$out);
+    IPC::Run3::run3(\@cmd, undef, \$out, \$out);
 
     return EBook::EPUB::Check::Result->new(\$out);
 }
