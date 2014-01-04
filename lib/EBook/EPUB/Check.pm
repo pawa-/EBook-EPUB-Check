@@ -12,15 +12,13 @@ use EBook::EPUB::Check::Result ();
 our $VERSION   = "0.01";
 our @EXPORT    = qw(epubcheck);
 our @EXPORT_OK = qw();
+our $JAR       = File::ShareDir::dist_file('EBook-EPUB-Check', 'epubcheck-3.0.1/epubcheck-3.0.1.jar');
 
 sub epubcheck
 {
     my ($epub, $jar) = @_;
 
-    if (scalar @_ == 1)
-    {
-        $jar = File::ShareDir::dist_file('EBook-EPUB-Check', 'epubcheck-3.0.1/epubcheck-3.0.1.jar');
-    }
+    $jar = $JAR if scalar @_ == 1;
 
     Carp::croak('jar file not found') unless -f $jar;
 

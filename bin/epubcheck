@@ -1,0 +1,8 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+use EBook::EPUB::Check ();
+
+my $jar = $EBook::EPUB::Check::JAR;
+system('java', '-jar', $jar, @ARGV);
