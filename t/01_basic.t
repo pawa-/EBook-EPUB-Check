@@ -5,6 +5,14 @@ use Test::Warn;
 use Test::Fatal;
 use EBook::EPUB::Check;
 
+chomp( my $java_version = qx(java -version 2>&1) );
+
+diag("\n\n");
+diag("------------ Java INFO ------------\n");
+diag("$java_version\n");
+diag("------------ END OF Java INFO -----\n");
+diag("\n");
+
 my $report = epubcheck('epub/valid.epub')->report;
 plan skip_all => $report if $report =~ /Error occurred during initialization of VM/i;
 
