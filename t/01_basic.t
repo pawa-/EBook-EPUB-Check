@@ -41,8 +41,8 @@ subtest 'jar file not found' => sub {
     like(exception { epubcheck('epub/valid.epub', 'hoge') }, qr/jar file not found/);
 };
 
-subtest 'valid jar file path specified' => sub {
-    my $result = epubcheck('epub/valid.epub', 'share/epubcheck-3.0.1/epubcheck-3.0.1.jar');
+subtest 'valid jar file path' => sub {
+    my $result = epubcheck('epub/valid.epub', $EBook::EPUB::Check::JAR);
     ok($result->is_valid);
     like($result->report, qr/No errors or warnings detected/i);
     note($result->report);
@@ -60,6 +60,14 @@ subtest 'undefined epub file path' => sub {
     warning_is { $result = epubcheck(undef); } 'epub file not found';
     ok( ! $result->is_valid );
     is($result->report, '');
+};
+
+subtest 'command line interface' => sub {
+    my $out1 = qx(bin/epubcheck epub/valid.epub 2>&1);
+    like($out1, qr/No errors or warnings detected/i);
+
+    my $out2 = qx(bin/epubcheck -out output.xml epub/valid.epub 2>&1);
+    like($out2, qr/Assessment XML document was saved in: output.xml/i);
 };
 
 done_testing;
