@@ -2,6 +2,8 @@ Revision history for Perl extension EBook-EPUB-Check
 
 {{$NEXT}}
 
+    - Stop the installation process if 'java -version' throws an error
+
 0.02 2014-01-04T14:34:16Z
 
     - Added command line interface
