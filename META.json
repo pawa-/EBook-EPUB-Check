@@ -54,6 +54,7 @@
       },
       "test" : {
          "requires" : {
+            "Probe::Perl" : "0.03",
             "Test::Fatal" : "0",
             "Test::More" : "0.99",
             "Test::Warn" : "0"

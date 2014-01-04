@@ -14,4 +14,5 @@ on 'test' => sub {
     requires 'Test::More',  '>= 0.99';
     requires 'Test::Warn';
     requires 'Test::Fatal';
+    requires 'Probe::Perl', '>= 0.03';
 };
