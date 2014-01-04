@@ -61,11 +61,12 @@ EBook::EPUB::Check - Perl wrapper for EpubCheck
 
   epubcheck('epub/valid.epub')->is_valid; # => success
 
+=for test_synopsis_expectation_no_test
 
 Command Line Interface:
 
-  epubcheck valid.epub
-  epubcheck -out output.xml valid.epub # Extracting information from an EPUB file
+  epubcheck ebook.epub
+  epubcheck -out output.xml ebook.epub # Extracting information from an EPUB file
 
 
 =head1 DESCRIPTION
