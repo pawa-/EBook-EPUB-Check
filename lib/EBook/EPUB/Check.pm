@@ -12,13 +12,15 @@ use EBook::EPUB::Check::Result ();
 our $VERSION   = "0.03";
 our @EXPORT    = qw(epubcheck);
 our @EXPORT_OK = qw();
+
 our $JAR       = File::ShareDir::dist_file('EBook-EPUB-Check', 'epubcheck-3.0.1/epubcheck-3.0.1.jar');
+$JAR           = Cygwin::posix_to_win_path($JAR) if $^O eq 'cygwin';
 
 sub epubcheck
 {
     my ($epub, $jar) = @_;
 
-    $jar = $JAR if scalar @_ == 1;
+    $jar = $JAR unless defined $jar;
 
     Carp::croak('jar file not found') unless -f $jar;
 
@@ -29,9 +31,7 @@ sub epubcheck
     }
 
     my $out;
-    my @cmd = ('java', '-jar', $jar, $epub);
-
-    IPC::Run3::run3(\@cmd, undef, \$out, \$out);
+    IPC::Run3::run3(['java', '-jar', $jar, $epub], undef, \$out, \$out);
 
     return EBook::EPUB::Check::Result->new(\$out);
 }
